@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-04T17:58:10+00:00">2018-10-04T17:58:10+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-04T18:09:19+00:00">2018-10-04T18:09:19+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">75.0%</span></span>
+    (<span class="covered_percent"><span class="red">75.93%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.45
+         1.5
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>52</b> relevant lines. 
-    <span class="green"><b>39</b> lines covered</span> and
+    <b>54</b> relevant lines. 
+    <span class="green"><b>41</b> lines covered</span> and
     <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -93,11 +93,11 @@
       <tr>
         <td class="strong"><a href="#2f404ddca4b5f824cc907db6897b6bccbefc4cac" class="src_link" title="app/models/movie.rb">app/models/movie.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>9</td>
         <td>5</td>
-        <td>3</td>
-        <td>3</td>
+        <td>5</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>2.2</td>
       </tr>
       
     </tbody>
@@ -170,15 +170,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.7
+         2.2
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>1</b> files in total.
-    <b>3</b> relevant lines. 
-    <span class="green"><b>3</b> lines covered</span> and
+    <b>5</b> relevant lines. 
+    <span class="green"><b>5</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -198,11 +198,11 @@
       <tr>
         <td class="strong"><a href="#2f404ddca4b5f824cc907db6897b6bccbefc4cac" class="src_link" title="app/models/movie.rb">app/models/movie.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>9</td>
         <td>5</td>
-        <td>3</td>
-        <td>3</td>
+        <td>5</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>2.2</td>
       </tr>
       
     </tbody>
@@ -520,7 +520,7 @@
         <li class="covered" data-hits="4" data-linenumber="14">
           <span class="hits">4</span>
           
-          <code class="ruby">     @movies = Movie.where(&#39;director=?&#39;,@movie.director)</code>
+          <code class="ruby">     @movies = @movie.movies_with_same_director</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -985,8 +985,8 @@
     <h3>app/models/movie.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1019,6 +1019,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  def movies_with_same_director</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    Movie.where(&quot;director=?&quot;,self.director)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
