@@ -1,11 +1,33 @@
+#
+# This file contains additional websteps to pass senarios in directors.features file
+#
+#
+
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-    # hint: look at movies_controller#create for a hint toward the one-line solution.
-
 	  Movie.create!(movie)
   end
+end
+
+Then /I should( not)? see the following movies: (.*)/ do |notsee, movies|
+  movies.split(‘, ‘).each do |this_movie|
+    if notsee
+      step %Q{I should not see "#{this_movie}"}
+    else
+      step %Q{I should see "#{this_movie}"}
+    end
+  end
+end
+
+Then /I should see all the movies/ do
+  Movie.all.each do |movie|
+    step %Q{I should see "#{movie.title}"}
+  end
+end
+
+Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
+  regexp = /.*#{e1}.*#{e2}.*/m
+  expect(page.body).to match(regexp)
 end
 
 Then /the director of "(.*)" should be "(.*)"/ do |movie, director|
@@ -30,25 +52,4 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
       step %Q{I check ratings_"#{rating}"}
     end
   end
-end
-
-Then /I should( not)? see the following movies: (.*)/ do |notsee, movies|
-  movies.split(‘, ‘).each do |this_movie|
-    if notsee
-      step %Q{I should not see "#{this_movie}"}
-    else
-      step %Q{I should see "#{this_movie}"}
-    end
-  end
-end
-
-Then /I should see all the movies/ do
-  Movie.all.each do |movie|
-    step %Q{I should see "#{movie.title}"}
-  end
-end
-
-Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
-  regexp = /.*#{e1}.*#{e2}.*/m
-  expect(page.body).to match(regexp)
 end
