@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   end
   
   def director
-     @movie = Movie.find(params[:id])
+     @movie = Movie.find params[:id]
      if @movie.director.blank? 
        flash[:notice] = "'#{@movie.title}' has no director info"
        redirect_to movies_path
@@ -68,7 +68,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    flash[:notice] = "Movie '#{@movie.title}' deleted."
+    flash[:notice] = "Movie #{@movie.title} deleted."
     redirect_to movies_path
   end
 

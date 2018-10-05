@@ -1,3 +1,5 @@
+#### CUCUMBER TEST RESULTS ####
+
 Using the default profile...
 Feature: search for movies by director
   As a movie buff
@@ -36,3 +38,15 @@ Feature: search for movies by director
 17 steps (17 passed)
 0m0.308s
 Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 41 / 54 LOC (75.93%) covered.
+
+
+### RSPEC TEST RESULTS #####
+....
+
+
+...........
+
+Finished in 0.07362 seconds (files took 1.59 seconds to load)
+11 examples, 0 failures
+
+Coverage report generated for RSpec to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 47 / 54 LOC (87.04%) covered.
